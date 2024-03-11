@@ -31,12 +31,13 @@
 function debounce(fn, delay) { 
     let timer;
     return (...args) => {
-        if (timer) clearTimeout(timer);
+        if (timer) {
+            clearTimeout(timer)
+        }
         timer = setTimeout(() => fn.apply(this,args), delay);
     }
 }
 function print(value) {
-    console.log(this);
     console.log(value);
 }
 const debounceInputChange = debounce(print, 1000);
