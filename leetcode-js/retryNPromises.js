@@ -11,7 +11,7 @@ function retry(asyncFn, retries = 3, delay = 50, finalError = 'Failed') {
         }
       });
     };
-    
+      console.log("Promise is called");
     attempt(0);
   });
 }
@@ -27,5 +27,5 @@ function asyncFn() {
 }
 
 retry(asyncFn)
-  .then(() => console.log('Success'))
-  .catch(error => console.error('Error:', error));
+//   .then(() => console.log('Success'))
+//   .catch(error => console.error('Error:', error));
